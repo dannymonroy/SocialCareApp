@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_client"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:clickable="true"
+    android:paddingLeft="4dp"
+    android:paddingTop="8dp">
+
+
+
+    <ImageView
+        android:id="@+id/ic_client"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_account_circle_black_36dp"
+        android:tint="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:maxWidth="36dp"
+        android:layout_weight="1"
+        android:paddingLeft="4dp"
+        android:textSize="14sp"
+        android:gravity="center|left"
+        android:maxLines="2"
+        android:maxLength="6"
+        android:text="Miss" />
+
+
+    <TextView
+        android:id="@+id/text_full_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:maxWidth="120dp"
+        android:textSize="18sp"
+        android:text="Theresa May"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/text_area"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="14sp"
+        android:maxWidth="60dp"
+        android:layout_weight="2"
+        android:gravity="center_vertical|right"
+        android:text="Golders Green" />
+
+    <TextView
+        android:id="@+id/text_time_start"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="16sp"
+        android:gravity="center_vertical|right"
+        android:layout_marginStart="16dp"
+        android:paddingRight="4dp"
+        android:layout_weight="1"
+        android:maxLength="5"
+        android:maxLines="1"
+        android:text="14:00" />
+
+</LinearLayout>
+
+
