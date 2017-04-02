@@ -24,9 +24,8 @@ import java.util.List;
 
 public class ListActivity extends AppCompatActivity implements ClientAdapter.ItemClickCallback {
 
-    //TEST
     private static final String URL_DATA = "https://socialcareapp.000webhostapp.com/index000.php";
-    //
+
     private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
     private static final String EXTRA_TITLE = "EXTRA_TITLE";
     private static final String EXTRA_NAME = "EXTRA_NAME";
@@ -36,31 +35,22 @@ public class ListActivity extends AppCompatActivity implements ClientAdapter.Ite
 
     private RecyclerView recView;
     private ClientAdapter adapter;
-    private ArrayList listData;
 
-    //TEST
-    private List<TestItem> testItems;
-    //
+    private List<VisitItem> visitItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        //listData = (ArrayList) Data.getListData();
 
         recView = (RecyclerView)findViewById(R.id.rec_list);
 
         recView.setLayoutManager(new LinearLayoutManager(this));
 
-        testItems =  new ArrayList<>();
+        visitItems =  new ArrayList<>();
 
         loadRecyclerViewData();
-
-        //adapter = new ClientAdapter(listData, this);
-
-        //recView.setAdapter(adapter);
-        //adapter.setItemClickCallback(this);
 
     }
 
@@ -78,16 +68,17 @@ public class ListActivity extends AppCompatActivity implements ClientAdapter.Ite
 
                         try {
                             JSONObject jsonObject = new JSONObject(s);
-                            JSONArray array = jsonObject.getJSONArray("heroes");
+                            JSONArray array = jsonObject.getJSONArray("test");
 
                             for(int i = 0; i<array.length(); i++){
-                                JSONObject o = array.getJSONObject(i);
-                                TestItem item = new TestItem(o.getString("name"),o.getString("about"),o.getString("image"));
+                                JSONObject jsonObj = array.getJSONObject(i);
+                                VisitItem item = new VisitItem(jsonObj.getString("title"),jsonObj.getString("full_name"),jsonObj.getString("area"),jsonObj.getString("start_date"));
+                                //VisitItem item = new VisitItem(o.getString("title"),o.getString("full_name"),o.getString("area"),o.getString("start_time"));
 
-                                testItems.add(item);
+                                visitItems.add(item);
                             }
 
-                            adapter = new ClientAdapter(testItems, getApplicationContext());
+                            adapter = new ClientAdapter(visitItems, getApplicationContext());
                             recView.setAdapter(adapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -98,7 +89,7 @@ public class ListActivity extends AppCompatActivity implements ClientAdapter.Ite
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        String volleyError = "Problems";
+                        String volleyError = "Problems...";
                         Toast.makeText(getApplicationContext(), volleyError, Toast.LENGTH_LONG).show();
                     }
                 });
@@ -109,7 +100,7 @@ public class ListActivity extends AppCompatActivity implements ClientAdapter.Ite
 
     @Override
     public void onItemClick(int p) {
-        ListItem item = (ListItem) listData.get(p);
+        /*VisitItem item = (VisitItem) listData.get(p);
 
         Intent i = new Intent(this, ClientActivity.class);
 
@@ -121,6 +112,6 @@ public class ListActivity extends AppCompatActivity implements ClientAdapter.Ite
 
         i.putExtra(BUNDLE_EXTRAS, extras);
 
-        startActivity(i);
+        startActivity(i);*/
     }
 }

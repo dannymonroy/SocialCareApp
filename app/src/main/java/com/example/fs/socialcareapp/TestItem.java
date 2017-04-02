@@ -5,7 +5,7 @@ package com.example.fs.socialcareapp;
  */
 
 public class TestItem {
-
+/*
     private String head;
     private String desc;
     private String imageUrl;
@@ -22,5 +22,5 @@ public class TestItem {
 
     public String getImageUrl() {
         return imageUrl;
-    }
+    }*/
 }

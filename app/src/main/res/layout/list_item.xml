@@ -29,7 +29,8 @@
         android:gravity="center|left"
         android:maxLines="2"
         android:maxLength="6"
-        android:text="Miss" />
+        android:text="Miss"
+        android:textColor="@color/colorPrimaryDark"/>
 
 
     <TextView
@@ -42,7 +43,8 @@
         android:text="Theresa May"
         android:gravity="center"
         android:maxLines="2"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"/>
 
 
     <TextView
@@ -53,7 +55,8 @@
         android:maxWidth="60dp"
         android:layout_weight="2"
         android:gravity="center_vertical|right"
-        android:text="Golders Green" />
+        android:text="Golders Green"
+        android:textColor="@color/colorPrimaryDark"/>
 
     <TextView
         android:id="@+id/text_time_start"
@@ -66,7 +69,8 @@
         android:layout_weight="1"
         android:maxLength="5"
         android:maxLines="1"
-        android:text="14:00" />
+        android:text="14:00"
+        android:textColor="@color/colorPrimaryDark"/>
 
 </LinearLayout>
 

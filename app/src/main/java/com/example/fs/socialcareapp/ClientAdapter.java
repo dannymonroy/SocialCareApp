@@ -18,9 +18,7 @@ import java.util.List;
 
 public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHolder> {
 
-    //CHANGED
-    private List<TestItem> testItem;
-    //
+    private List<VisitItem> visitItem;
     private LayoutInflater inflater;
 
     private ItemClickCallback itemClickCallback;
@@ -33,9 +31,9 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
         this.itemClickCallback = itemClickCallback;
     }
 
-    public ClientAdapter(List<TestItem> testItem, Context c){
+    public ClientAdapter(List<VisitItem> visitItem, Context c){
         this.inflater = LayoutInflater.from(c);
-        this.testItem = testItem;
+        this.visitItem = visitItem;
     }
 
     @Override
@@ -46,29 +44,29 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
 
     @Override
     public void onBindViewHolder(ClientHolder holder, int position) {
-        TestItem item = testItem.get(position);
-
-        holder.title.setText(item.getHead());
-        holder.name.setText(item.getDesc());
-        holder.area.setText(item.getImageUrl());
-
+        VisitItem item = visitItem.get(position);
+        //holder.icon.setImageResource(item.getImageResId());
+        holder.title.setText(item.getTitle());
+        holder.name.setText(item.getFullName());
+        holder.area.setText(item.getArea());
+        holder.time.setText(item.getStartTime());
         /*
-        holder.icon.setImageResource(item.getImageResId());
+
         holder.title.setText(item.getTitle());
         holder.name.setText(item.getName());
         holder.area.setText(item.getArea());
-        holder.time.setText(item.getTime());
+
         */
     }
 
     @Override
     public int getItemCount() {
-        return testItem.size();
+        return visitItem.size();
     }
 
     class ClientHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        private ImageView icon;
+        //private ImageView icon;
         private TextView title;
         private TextView name;
         private TextView area;
@@ -83,10 +81,9 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
             title = (TextView)itemView.findViewById(R.id.text_title);
             name = (TextView)itemView.findViewById(R.id.text_full_name);
             area = (TextView)itemView.findViewById(R.id.text_area);
-
-//            time = (TextView)itemView.findViewById(R.id.text_time_start);
-//            container = itemView.findViewById(R.id.item_client);
-//            container.setOnClickListener(this);
+            time = (TextView)itemView.findViewById(R.id.text_time_start);
+            container = itemView.findViewById(R.id.item_client);
+//          container.setOnClickListener(this);
 
         }
 
