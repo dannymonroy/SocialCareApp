@@ -51,11 +51,11 @@ public class ListActivity extends AppCompatActivity implements ClientAdapter.Ite
 
     private static final String URL_DATA = "https://socialcareapp.000webhostapp.com/index000.php";
 
-    private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
+/*    private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
     private static final String EXTRA_TITLE = "EXTRA_TITLE";
     private static final String EXTRA_NAME = "EXTRA_NAME";
     private static final String EXTRA_AREA = "EXTRA_AREA";
-    private static final String EXTRA_TIME = "EXTRA_TIME";
+    private static final String EXTRA_TIME = "EXTRA_TIME";*/
 
 
     private RecyclerView recView;
