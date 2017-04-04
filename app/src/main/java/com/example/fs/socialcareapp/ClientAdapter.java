@@ -48,6 +48,12 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
     private List<VisitItem> visitItems;
     private Context context;
 
+    private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
+    private static final String EXTRA_TITLE = "EXTRA_TITLE";
+    private static final String EXTRA_NAME = "EXTRA_NAME";
+    private static final String EXTRA_AREA = "EXTRA_AREA";
+    private static final String EXTRA_TIME = "EXTRA_TIME";
+
     public ClientAdapter(List<VisitItem> visitItems, Context context){
         this.visitItems = visitItems;
         this.context = context;
@@ -74,7 +80,19 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context.getApplicationContext(), "You clicked "+visitItem.getFullName(), Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(context.getApplicationContext(), ClientActivity.class);
+
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Bundle extras = new Bundle();
+                extras.putString(EXTRA_TITLE, visitItem.getTitle());
+                extras.putString(EXTRA_NAME, visitItem.getFullName());
+                extras.putString(EXTRA_AREA, visitItem.getArea());
+                extras.putString(EXTRA_TIME, visitItem.getStartTime());
+
+                i.putExtra(BUNDLE_EXTRAS, extras);
+
+                context.startActivity(i);
             }
         });
 
