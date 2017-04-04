@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2017 Danny Monroy
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.example.fs.socialcareapp;
 
 import android.app.ProgressDialog;
@@ -21,6 +37,15 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * ListActivity in this class we displays the view from the RecyclerView and also get our data from the JSON object
+ * created by the PHP script.
+ *
+ * @author  Danny Monroy
+ * @version 1.0
+ * @since   2017-02-20
+ */
 
 public class ListActivity extends AppCompatActivity implements ClientAdapter.ItemClickCallback {
 
@@ -63,7 +88,6 @@ public class ListActivity extends AppCompatActivity implements ClientAdapter.Ite
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {
-                        //IN THIS METHOD WE GET THE JSON
                         progressDialog.dismiss();
 
                         try {
@@ -73,7 +97,6 @@ public class ListActivity extends AppCompatActivity implements ClientAdapter.Ite
                             for(int i = 0; i<array.length(); i++){
                                 JSONObject jsonObj = array.getJSONObject(i);
                                 VisitItem item = new VisitItem(jsonObj.getString("title"),jsonObj.getString("full_name"),jsonObj.getString("area"),jsonObj.getString("start_date"));
-                                //VisitItem item = new VisitItem(o.getString("title"),o.getString("full_name"),o.getString("area"),o.getString("start_time"));
 
                                 visitItems.add(item);
                             }
@@ -89,7 +112,7 @@ public class ListActivity extends AppCompatActivity implements ClientAdapter.Ite
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        String volleyError = "Problems...";
+                        String volleyError = "There seems like there is no internet";
                         Toast.makeText(getApplicationContext(), volleyError, Toast.LENGTH_LONG).show();
                     }
                 });
