@@ -16,17 +16,24 @@
 
 package com.example.fs.socialcareapp;
 
+import android.app.Activity;
+import android.app.LauncherActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
+
 
 /**
  * ClientAdapter this is where we inflate the views and we bind the view holder.
@@ -38,52 +45,53 @@ import java.util.List;
 
 public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHolder> {
 
-    private List<VisitItem> visitItem;
-    private LayoutInflater inflater;
+    private List<VisitItem> visitItems;
+    private Context context;
 
-    private ItemClickCallback itemClickCallback;
-
-    public interface ItemClickCallback{
-        void onItemClick(int p);
-    }
-
-    public void setItemClickCallback(final ItemClickCallback itemClickCallback){
-        this.itemClickCallback = itemClickCallback;
-    }
-
-    public ClientAdapter(List<VisitItem> visitItem, Context c){
-        this.inflater = LayoutInflater.from(c);
-        this.visitItem = visitItem;
+    public ClientAdapter(List<VisitItem> visitItems, Context context){
+        this.visitItems = visitItems;
+        this.context = context;
     }
 
     @Override
     public ClientHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.list_item, parent, false);
-        return new ClientHolder(view);
+        View v = LayoutInflater.from(parent.getContext()).inflate(
+                R.layout.list_item, parent, false);
+
+        return new ClientHolder(v);
+
     }
 
     @Override
-    public void onBindViewHolder(ClientHolder holder, int position) {
-        VisitItem item = visitItem.get(position);
-        //holder.icon.setImageResource(item.getImageResId());
-        holder.title.setText(item.getTitle());
-        holder.name.setText(item.getFullName());
-        holder.area.setText(item.getArea());
-        holder.time.setText(item.getStartTime());
+    public void onBindViewHolder(ClientHolder holder, final int position) {
+        final VisitItem visitItem = visitItems.get(position);
+
+        holder.title.setText(visitItem.getTitle());
+        holder.fullName.setText(visitItem.getFullName());
+        holder.area.setText(visitItem.getArea());
+        holder.startTime.setText(visitItem.getStartTime());
+
+        holder.container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context.getApplicationContext(), "You clicked "+visitItem.getFullName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
     public int getItemCount() {
-        return visitItem.size();
+        return visitItems.size();
     }
 
-    class ClientHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class ClientHolder extends RecyclerView.ViewHolder {
 
         //private ImageView icon;
         private TextView title;
-        private TextView name;
+        private TextView fullName;
         private TextView area;
-        private TextView time;
+        private TextView startTime;
 
         private View container;
 
@@ -92,19 +100,11 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
 
             //icon = (ImageView)itemView.findViewById(R.id.ic_client);
             title = (TextView)itemView.findViewById(R.id.text_title);
-            name = (TextView)itemView.findViewById(R.id.text_full_name);
+            fullName = (TextView)itemView.findViewById(R.id.text_full_name);
             area = (TextView)itemView.findViewById(R.id.text_area);
-            time = (TextView)itemView.findViewById(R.id.text_time_start);
-            container = itemView.findViewById(R.id.item_client);
-//          container.setOnClickListener(this);
+            startTime = (TextView)itemView.findViewById(R.id.text_time_start);
+            container =  itemView.findViewById(R.id.item_client);
 
-        }
-
-        @Override
-        public void onClick(View v){
-            if (v.getId() == R.id.item_client){
-                itemClickCallback.onItemClick(getAdapterPosition());
-            }
         }
 
     }

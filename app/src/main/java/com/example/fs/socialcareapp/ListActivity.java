@@ -47,15 +47,11 @@ import java.util.List;
  * @since   2017-02-20
  */
 
-public class ListActivity extends AppCompatActivity implements ClientAdapter.ItemClickCallback {
+public class ListActivity extends AppCompatActivity  {
 
     private static final String URL_DATA = "https://socialcareapp.000webhostapp.com/index000.php";
 
-/*    private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
-    private static final String EXTRA_TITLE = "EXTRA_TITLE";
-    private static final String EXTRA_NAME = "EXTRA_NAME";
-    private static final String EXTRA_AREA = "EXTRA_AREA";
-    private static final String EXTRA_TIME = "EXTRA_TIME";*/
+
 
 
     private RecyclerView recView;
@@ -120,10 +116,11 @@ public class ListActivity extends AppCompatActivity implements ClientAdapter.Ite
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
+/*
     @Override
-    public void onItemClick(int p) {
-        /*VisitItem item = (VisitItem) listData.get(p);
+    public void onItemClick(int p) {}
+
+        VisitItem item = (VisitItem) listData.get(p);
 
         Intent i = new Intent(this, ClientActivity.class);
 
@@ -135,6 +132,7 @@ public class ListActivity extends AppCompatActivity implements ClientAdapter.Ite
 
         i.putExtra(BUNDLE_EXTRAS, extras);
 
-        startActivity(i);*/
-    }
+        startActivity(i);
+    }*/
+
 }
