@@ -34,13 +34,26 @@
 
 
     <TextView
-        android:id="@+id/text_full_name"
+        android:id="@+id/text_name"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="4"
         android:maxWidth="120dp"
         android:textSize="18sp"
-        android:text="Theresa May"
+        android:text="Theresa"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/text_surname"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:maxWidth="120dp"
+        android:textSize="18sp"
+        android:text="May"
         android:gravity="center"
         android:maxLines="2"
         android:textStyle="bold"

@@ -35,6 +35,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +52,7 @@ import java.util.List;
 
 public class ListActivity extends AppCompatActivity  {
 
-    private static final String URL_DATA = "https://socialcareapp.000webhostapp.com/index000.php";
+    private static final String URL_DATA = "https://socialcareapp.000webhostapp.com/index1.php";
 
 
 
@@ -88,11 +91,12 @@ public class ListActivity extends AppCompatActivity  {
 
                         try {
                             JSONObject jsonObject = new JSONObject(s);
-                            JSONArray array = jsonObject.getJSONArray("test");
+                            JSONArray array = jsonObject.getJSONArray("visits");
 
                             for(int i = 0; i<array.length(); i++){
                                 JSONObject jsonObj = array.getJSONObject(i);
-                                VisitItem item = new VisitItem(jsonObj.getString("title"),jsonObj.getString("full_name"),jsonObj.getString("area"),jsonObj.getString("start_date"));
+
+                                VisitItem item = new VisitItem(jsonObj.getString("title"),jsonObj.getString("name"),jsonObj.getString("surname"),jsonObj.getString("area"),jsonObj.getString("start_time"));
 
                                 visitItems.add(item);
                             }

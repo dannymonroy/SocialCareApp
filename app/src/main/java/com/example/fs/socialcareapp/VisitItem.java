@@ -15,6 +15,8 @@
  */
 package com.example.fs.socialcareapp;
 
+import java.sql.Date;
+
 /**
  * VisitItem This class models the data needed for a first approach in the application.
  *
@@ -26,30 +28,34 @@ package com.example.fs.socialcareapp;
 public class VisitItem {
 
     private String title;
-    private String fullName;
+    private String name;
+    private String surname;
     private String area;
-        private String startDate;
+    private String startTime;
 
-    public VisitItem(String title, String fullName, String area, String startDate) {
+    public VisitItem(String title, String name, String surname, String area, String startTime) {
         this.title = title;
-        this.fullName = fullName;
+        this.name = name;
+        this.surname = surname;
         this.area = area;
-        this.startDate = startDate;
+        this.startTime = startTime;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
+
+    public String getSurname() {return surname;}
 
     public String getArea() {
         return area;
     }
 
     public String getStartTime() {
-        return startDate;
+        return startTime;
     }
 }

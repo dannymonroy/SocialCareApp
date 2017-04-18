@@ -24,13 +24,22 @@
         android:text="Mrs" />
 
     <TextView
-        android:id="@+id/text_client_name"
+    android:id="@+id/text_client_name"
+    android:layout_width="302dp"
+    android:layout_height="wrap_content"
+    android:fontFamily="sans-serif-medium"
+    android:textSize="30sp"
+    android:textColor="@color/colorPrimaryDark"
+    android:text="Theresa" />
+
+    <TextView
+        android:id="@+id/text_client_surname"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:textSize="30sp"
         android:textColor="@color/colorPrimaryDark"
-        android:text="Theresa May" />
+        android:text="May" />
 
     <TextView
         android:id="@+id/text_client_area"

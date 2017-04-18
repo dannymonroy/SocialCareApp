@@ -73,7 +73,8 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
         final VisitItem visitItem = visitItems.get(position);
 
         holder.title.setText(visitItem.getTitle());
-        holder.fullName.setText(visitItem.getFullName());
+        holder.name.setText(visitItem.getName());
+        holder.surname.setText(visitItem.getSurname());
         holder.area.setText(visitItem.getArea());
         holder.startTime.setText(visitItem.getStartTime());
 
@@ -86,7 +87,8 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 Bundle extras = new Bundle();
                 extras.putString(EXTRA_TITLE, visitItem.getTitle());
-                extras.putString(EXTRA_NAME, visitItem.getFullName());
+                extras.putString(EXTRA_NAME, visitItem.getName());
+                //extras.putString(EXTRA_TITLE, VisitItem.getSurname());
                 extras.putString(EXTRA_AREA, visitItem.getArea());
                 extras.putString(EXTRA_TIME, visitItem.getStartTime());
 
@@ -107,7 +109,8 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
 
         //private ImageView icon;
         private TextView title;
-        private TextView fullName;
+        private TextView name;
+        private TextView surname;
         private TextView area;
         private TextView startTime;
 
@@ -118,7 +121,8 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
 
             //icon = (ImageView)itemView.findViewById(R.id.ic_client);
             title = (TextView)itemView.findViewById(R.id.text_title);
-            fullName = (TextView)itemView.findViewById(R.id.text_full_name);
+            name = (TextView)itemView.findViewById(R.id.text_name);
+            surname = (TextView)itemView.findViewById(R.id.text_surname);
             area = (TextView)itemView.findViewById(R.id.text_area);
             startTime = (TextView)itemView.findViewById(R.id.text_time_start);
             container =  itemView.findViewById(R.id.item_client);
