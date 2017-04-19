@@ -52,7 +52,9 @@ import java.util.List;
 
 public class ListActivity extends AppCompatActivity  {
 
-    private static final String URL_DATA = "https://socialcareapp.000webhostapp.com/index1.php";
+
+
+    //final String URL = "https://socialcareapp.000webhostapp.com/index1.php";
 
 
 
@@ -62,10 +64,18 @@ public class ListActivity extends AppCompatActivity  {
 
     private List<VisitItem> visitItems;
 
+    String returnURL (){
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("carer_id");
+        final String URL_DATA = "https://socialcareapp.000webhostapp.com/index1.php?id="+username;
+        return URL_DATA;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
 
 
         recView = (RecyclerView)findViewById(R.id.rec_list);
@@ -83,7 +93,7 @@ public class ListActivity extends AppCompatActivity  {
         progressDialog.setMessage("Loading data...");
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATA,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, returnURL(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {
