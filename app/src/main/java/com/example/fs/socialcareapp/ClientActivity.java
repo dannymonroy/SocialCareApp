@@ -18,7 +18,10 @@ package com.example.fs.socialcareapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+
+import static org.json.JSONObject.NULL;
 
 /**
  * ClientActivity this activity will display the specific client with more detail.
@@ -58,7 +61,13 @@ public class ClientActivity extends AppCompatActivity {
         clientName.setText(extras.getString(EXTRA_NAME));
 
         TextView clientMiddleName = (TextView)findViewById(R.id.text_client_middle_name);
-        clientMiddleName.setText(extras.getString(EXTRA_MIDDLE_NAME));
+
+        //clientMiddleName.setVisibility(TextView.GONE);
+        if(extras.getString(EXTRA_MIDDLE_NAME).equalsIgnoreCase("")){
+            clientMiddleName.setVisibility(View.GONE);
+        } else {
+            clientMiddleName.setText(extras.getString(EXTRA_MIDDLE_NAME));
+        }
 
         TextView clientSurname = (TextView)findViewById(R.id.text_client_surname);
         clientSurname.setText(extras.getString(EXTRA_SURNAME));

@@ -38,8 +38,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:textSize="20sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="" />
+        android:textColor="@color/colorPrimaryDark" />
 
     <TextView
         android:id="@+id/text_client_surname"
