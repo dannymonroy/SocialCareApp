@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scroll_view"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_client"
@@ -13,6 +14,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+
     tools:context="com.example.fs.socialcareapp.ClientActivity">
 
     <TextView
@@ -21,33 +23,46 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textColor="@color/colorPrimary"
-        android:text="Mrs" />
+        android:text="Mrs"
+        android:layout_marginBottom="8dp"/>
 
-    <TextView
-    android:id="@+id/text_client_name"
-    android:layout_width="302dp"
-    android:layout_height="wrap_content"
-    android:fontFamily="sans-serif-medium"
-    android:textSize="30sp"
-    android:textColor="@color/colorPrimaryDark"
-    android:text="Theresa" />
-
-    <TextView
-        android:id="@+id/text_client_middle_name"
-        android:layout_width="302dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="20sp"
-        android:textColor="@color/colorPrimaryDark" />
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        >
+        <TextView
+            android:id="@+id/text_client_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginRight="8dp"
+            android:textSize="34sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Theresa" />
 
-    <TextView
-        android:id="@+id/text_client_surname"
-        android:layout_width="302dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="30sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="May" />
+        <TextView
+            android:id="@+id/text_client_middle_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="34sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginRight="8dp"/>
+
+        <TextView
+            android:id="@+id/text_client_surname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="34sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="May" />
+
+    </LinearLayout>
+
+
 
     <TextView
         android:id="@+id/text_client_area"
@@ -57,12 +72,23 @@
         android:textSize="20sp"
         android:textColor="@color/colorPrimary"
         android:text="Westminster"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        android:layout_marginBottom="8dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/text_fixed_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Time Visit:"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginRight="10px"/>
 
         <TextView
             android:id="@+id/text_client_start_time"
@@ -92,22 +118,32 @@
 
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/text_fixed_level_vulnerability"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="Level of Vulnerability:"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_marginTop="50px"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
 
-    <TextView
-        android:id="@+id/text_client_level_vulnerability"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Medium"
-        android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/text_fixed_level_vulnerability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Vulnerability Level:"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginRight="8dp"
+            />
+
+        <TextView
+            android:id="@+id/text_client_level_vulnerability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+
 
 
     <TextView
@@ -117,7 +153,7 @@
         android:textSize="20sp"
         android:text="Address:"
         android:textColor="@color/colorPrimaryDark"
-        android:layout_marginTop="50px"/>
+        android:layout_marginBottom="8dp"/>
 
 
 
@@ -132,7 +168,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SE1 PPP"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp"/>
 
 
     <TextView
@@ -142,13 +179,14 @@
         android:textSize="20sp"
         android:text="General Information: "
         android:textColor="@color/colorPrimaryDark"
-        android:layout_marginTop="50px"/>
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/text_client_general_information"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:id="@+id/text_fixed_keycode"
@@ -157,28 +195,31 @@
         android:textSize="20sp"
         android:text="Keysafe Code:"
         android:textColor="@color/colorPrimaryDark"
-        android:layout_marginTop="50px"/>
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/text_client_keycode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Client will provide access"/>
+        android:text="Client will provide access"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btn_maps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
         android:text="Look in Maps"
-        android:layout_marginTop="50sp"/>
-
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btn_report"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Report"
-        android:layout_marginTop="50sp"/>
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:text="Report"/>
 
 
 
