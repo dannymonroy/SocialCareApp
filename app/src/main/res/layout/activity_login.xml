@@ -6,42 +6,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.fs.socialcareapp.LoginActivity">
+    tools:context="com.example.fs.socialcareapp.LoginActivity"
+    android:background="#FF7259">
 
 
     <ImageView
+        android:layout_marginTop="8dp"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="243dp"
-        app:srcCompat="@drawable/final_logo" />
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/logo_inverse2" />
+
 
     <EditText
         android:id="@+id/text_carer_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="18dp"
+
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
         android:ems="10"
+        android:padding="8dp"
+        android:textColor="#FFFFFF"
+        android:background="#FF7259"
+        android:textSize="10pt"
         android:hint="Username"
         android:inputType="textPersonName"
+        android:textColorHint="#FFFFFF"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="18dp"/>
 
     <EditText
+
         android:id="@+id/text_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
+        android:background="#FF7259"
+        android:padding="8dp"
         android:ems="10"
         android:fontFamily="roboto"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         android:hint="Password"
-        android:inputType="textPassword" />
+        android:textSize="10pt"
+        android:inputType="textPassword"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="18dp"/>
+
 
     <Button
+        android:layout_gravity="center_horizontal"
         android:id="@+id/btn_log_in"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/white"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:textSize="10pt"
+        android:fontFamily="Helvetica"
+        android:background="#38618C"
+        android:textColor="@color/whitePlatinum"
         android:layout_margin="18dp"
+        android:shadowColor="#000000"
+        android:bottomRightRadius="10dp"
+        android:bottomLeftRadius="10dp"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
         android:text="Log in" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="For more information click here"
+        android:textStyle="italic"
+        android:textColor="@color/whitePlatinum"/>
 </LinearLayout>

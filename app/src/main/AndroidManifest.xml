@@ -21,7 +21,10 @@
             android:name=".ListActivity"
             android:label="List of Clients"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".ClientActivity"></activity>
+
+        <activity android:name=".ClientActivity">
+
+        </activity>
     </application>
 
 </manifest>
