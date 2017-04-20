@@ -16,10 +16,17 @@
 
 package com.example.fs.socialcareapp;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import static org.json.JSONObject.NULL;
 
@@ -32,6 +39,7 @@ import static org.json.JSONObject.NULL;
  */
 
 public class ClientActivity extends AppCompatActivity {
+
 
     private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
     private static final String EXTRA_TITLE = "EXTRA_TITLE";
@@ -47,8 +55,12 @@ public class ClientActivity extends AppCompatActivity {
     private static final String EXTRA_KEYCODE = "EXTRA_KEYCODE";
     private static final String EXTRA_LEVEL_VULNERABILITY = "EXTRA_LEVEL_VULNERABILITY";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client);
 
@@ -62,7 +74,6 @@ public class ClientActivity extends AppCompatActivity {
 
         TextView clientMiddleName = (TextView)findViewById(R.id.text_client_middle_name);
 
-        //clientMiddleName.setVisibility(TextView.GONE);
         if(extras.getString(EXTRA_MIDDLE_NAME).equalsIgnoreCase("")){
             clientMiddleName.setVisibility(View.GONE);
         } else {
@@ -74,6 +85,8 @@ public class ClientActivity extends AppCompatActivity {
 
         TextView clientArea = (TextView)findViewById(R.id.text_client_area);
         clientArea.setText(extras.getString(EXTRA_AREA));
+
+
 
         TextView clientStartTime = (TextView)findViewById(R.id.text_client_start_time);
         clientStartTime.setText(extras.getString(EXTRA_START_TIME));
@@ -95,6 +108,47 @@ public class ClientActivity extends AppCompatActivity {
 
         TextView clientLevelVulnerability = (TextView)findViewById(R.id.text_client_level_vulnerability);
         clientLevelVulnerability.setText(extras.getString(EXTRA_LEVEL_VULNERABILITY));
+
+        Button maps = (Button) findViewById(R.id.btn_maps);
+        maps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                TextView post = (TextView) findViewById(R.id.text_client_postcode);
+                String postcode = post.getText().toString();
+                postcode = postcode.replaceAll(" ", "+");
+
+            Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.google.co.uk/maps/place/"+postcode));
+            startActivity(intent);
+
+            }
+        });
+
+        Button email = (Button) findViewById(R.id.btn_report);
+
+        email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                TextView clientName = (TextView) findViewById(R.id.text_client_name);
+                String name = clientName.getText().toString();
+
+                 TextView clientSurname = (TextView) findViewById(R.id.text_client_surname);
+                String surname = clientSurname.getText().toString();
+
+                String subject = name+" "+surname+": Issue here";
+
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                        "mailto","help@careagency.com", null));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Write as much as you know about the issue");
+                startActivity(Intent.createChooser(emailIntent, "Send email..."));
+            }
+        });
+
+
+
+
 
 
     }

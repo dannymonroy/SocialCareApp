@@ -70,12 +70,8 @@ public class LoginActivity extends AppCompatActivity {
                             Boolean success = jsonResponse.getBoolean("success");
 
                             if (success){
-                                //String name = jsonResponse.getString("name");
-                                //int age = jsonResponse.getInt("age");
 
                                 Intent intent = new Intent(LoginActivity.this, ListActivity.class);
-                                //intent.putExtra("name", name);
-                                //intent.putExtra("age", age);
                                 intent.putExtra("carer_id", carer_id);
                                 LoginActivity.this.startActivity(intent);
                             } else {
@@ -94,8 +90,6 @@ public class LoginActivity extends AppCompatActivity {
                 LoginRequest loginRequest = new LoginRequest(carer_id, password, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(loginRequest);
-                //Intent intent = new Intent(LoginActivity.this, ListActivity.class);
-                //LoginActivity.this.startActivity(intent);
             }
         });
     }

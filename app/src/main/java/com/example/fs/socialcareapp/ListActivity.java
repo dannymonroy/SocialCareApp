@@ -64,7 +64,7 @@ public class ListActivity extends AppCompatActivity  {
 
     private List<VisitItem> visitItems;
 
-    String returnURL (){
+    public String returnURL (){
         Intent intent = getIntent();
         String username = intent.getStringExtra("carer_id");
         final String URL_DATA = "https://socialcareapp.000webhostapp.com/index1.php?id="+username;
