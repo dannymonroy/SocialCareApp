@@ -24,6 +24,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -44,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText userEdit, passEdit;
     Button logIn;
+    TextView info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,8 @@ public class LoginActivity extends AppCompatActivity {
         logIn = (Button) findViewById(R.id.btn_log_in);
         userEdit = (EditText)findViewById(R.id.text_carer_id);
         passEdit = (EditText)findViewById(R.id.text_password);
+
+        info = (TextView) findViewById(R.id.text_info);
 
         logIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +94,14 @@ public class LoginActivity extends AppCompatActivity {
                 LoginRequest loginRequest = new LoginRequest(carer_id, password, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(loginRequest);
+            }
+        });
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, InfoActivity.class);
+                LoginActivity.this.startActivity(intent);
             }
         });
     }
