@@ -33,8 +33,16 @@ public class ClientActivity extends AppCompatActivity {
     private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
     private static final String EXTRA_TITLE = "EXTRA_TITLE";
     private static final String EXTRA_NAME = "EXTRA_NAME";
+    private static final String EXTRA_MIDDLE_NAME = "EXTRA_MIDDLE_NAME";
+    private static final String EXTRA_SURNAME = "EXTRA_SURNAME";
     private static final String EXTRA_AREA = "EXTRA_AREA";
-    private static final String EXTRA_TIME = "EXTRA_TIME";
+    private static final String EXTRA_START_TIME = "EXTRA_START_TIME";
+    private static final String EXTRA_END_TIME = "EXTRA_END_TIME";
+    private static final String EXTRA_ADDRESS = "EXTRA_ADDRESS";
+    private static final String EXTRA_POSTCODE = "EXTRA_POSTCODE";
+    private static final String EXTRA_GENERAL_INFORMATION = "EXTRA_GENERAL_INFORMATION";
+    private static final String EXTRA_KEYCODE = "EXTRA_KEYCODE";
+    private static final String EXTRA_LEVEL_VULNERABILITY = "EXTRA_LEVEL_VULNERABILITY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +57,36 @@ public class ClientActivity extends AppCompatActivity {
         TextView clientName = (TextView)findViewById(R.id.text_client_name);
         clientName.setText(extras.getString(EXTRA_NAME));
 
+        TextView clientMiddleName = (TextView)findViewById(R.id.text_client_middle_name);
+        clientMiddleName.setText(extras.getString(EXTRA_MIDDLE_NAME));
+
+        TextView clientSurname = (TextView)findViewById(R.id.text_client_surname);
+        clientSurname.setText(extras.getString(EXTRA_SURNAME));
+
         TextView clientArea = (TextView)findViewById(R.id.text_client_area);
         clientArea.setText(extras.getString(EXTRA_AREA));
 
-        TextView clientTime = (TextView)findViewById(R.id.text_client_time);
-        clientTime.setText(extras.getString(EXTRA_TIME));
+        TextView clientStartTime = (TextView)findViewById(R.id.text_client_start_time);
+        clientStartTime.setText(extras.getString(EXTRA_START_TIME));
+
+        TextView clientEndTime = (TextView)findViewById(R.id.text_client_end_time);
+        clientEndTime.setText(extras.getString(EXTRA_END_TIME));
+
+        TextView clientAddress = (TextView)findViewById(R.id.text_client_address);
+        clientAddress.setText(extras.getString(EXTRA_ADDRESS));
+
+        TextView clientPostcode = (TextView)findViewById(R.id.text_client_postcode);
+        clientPostcode.setText(extras.getString(EXTRA_POSTCODE));
+
+        TextView clientGeneralInformation = (TextView)findViewById(R.id.text_client_general_information);
+        clientGeneralInformation.setText(extras.getString(EXTRA_GENERAL_INFORMATION));
+
+        TextView clientKeycode = (TextView)findViewById(R.id.text_client_keycode);
+        clientKeycode.setText(extras.getString(EXTRA_KEYCODE));
+
+        TextView clientLevelVulnerability = (TextView)findViewById(R.id.text_client_level_vulnerability);
+        clientLevelVulnerability.setText(extras.getString(EXTRA_LEVEL_VULNERABILITY));
+
 
     }
 }

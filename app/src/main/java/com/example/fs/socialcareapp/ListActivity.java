@@ -106,7 +106,8 @@ public class ListActivity extends AppCompatActivity  {
                             for(int i = 0; i<array.length(); i++){
                                 JSONObject jsonObj = array.getJSONObject(i);
 
-                                VisitItem item = new VisitItem(jsonObj.getString("title"),jsonObj.getString("name"),jsonObj.getString("surname"),jsonObj.getString("area"),jsonObj.getString("start_time"));
+                                VisitItem item = new VisitItem(jsonObj.getString("title"),jsonObj.getString("name"),jsonObj.getString("middle_name"),jsonObj.getString("surname"),jsonObj.getString("area"),jsonObj.getString("start_time"),
+                                jsonObj.getString("end_time"),jsonObj.getString("address"),jsonObj.getString("postcode"),jsonObj.getString("general_information"),jsonObj.getString("keycode"),jsonObj.getString("level_vulnerability"));
 
                                 visitItems.add(item);
                             }
@@ -130,23 +131,5 @@ public class ListActivity extends AppCompatActivity  {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-/*
-    @Override
-    public void onItemClick(int p) {}
-
-        VisitItem item = (VisitItem) listData.get(p);
-
-        Intent i = new Intent(this, ClientActivity.class);
-
-        Bundle extras = new Bundle();
-        extras.putString(EXTRA_TITLE, item.getTitle());
-        extras.putString(EXTRA_NAME, item.getName());
-        extras.putString(EXTRA_AREA, item.getArea());
-        extras.putString(EXTRA_TIME, item.getTime());
-
-        i.putExtra(BUNDLE_EXTRAS, extras);
-
-        startActivity(i);
-    }*/
 
 }

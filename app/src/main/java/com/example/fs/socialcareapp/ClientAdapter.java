@@ -48,11 +48,20 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
     private List<VisitItem> visitItems;
     private Context context;
 
+
     private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
     private static final String EXTRA_TITLE = "EXTRA_TITLE";
     private static final String EXTRA_NAME = "EXTRA_NAME";
+    private static final String EXTRA_MIDDLE_NAME = "EXTRA_MIDDLE_NAME";
+    private static final String EXTRA_SURNAME = "EXTRA_SURNAME";
     private static final String EXTRA_AREA = "EXTRA_AREA";
-    private static final String EXTRA_TIME = "EXTRA_TIME";
+    private static final String EXTRA_START_TIME = "EXTRA_START_TIME";
+    private static final String EXTRA_END_TIME = "EXTRA_END_TIME";
+    private static final String EXTRA_ADDRESS = "EXTRA_ADDRESS";
+    private static final String EXTRA_POSTCODE = "EXTRA_POSTCODE";
+    private static final String EXTRA_GENERAL_INFORMATION = "EXTRA_GENERAL_INFORMATION";
+    private static final String EXTRA_KEYCODE = "EXTRA_KEYCODE";
+    private static final String EXTRA_LEVEL_VULNERABILITY = "EXTRA_LEVEL_VULNERABILITY";
 
     public ClientAdapter(List<VisitItem> visitItems, Context context){
         this.visitItems = visitItems;
@@ -76,7 +85,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
         holder.name.setText(visitItem.getName());
         holder.surname.setText(visitItem.getSurname());
         holder.area.setText(visitItem.getArea());
-        holder.startTime.setText(visitItem.getStartTime());
+        holder.start_time.setText(visitItem.getStartTime());
 
         holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,9 +97,16 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
                 Bundle extras = new Bundle();
                 extras.putString(EXTRA_TITLE, visitItem.getTitle());
                 extras.putString(EXTRA_NAME, visitItem.getName());
-                //extras.putString(EXTRA_TITLE, VisitItem.getSurname());
+                extras.putString(EXTRA_MIDDLE_NAME, visitItem.getMiddleName());
+                extras.putString(EXTRA_SURNAME, visitItem.getSurname());
                 extras.putString(EXTRA_AREA, visitItem.getArea());
-                extras.putString(EXTRA_TIME, visitItem.getStartTime());
+                extras.putString(EXTRA_START_TIME, visitItem.getStartTime());
+                extras.putString(EXTRA_END_TIME, visitItem.getEndTime());
+                extras.putString(EXTRA_ADDRESS, visitItem.getAddress());
+                extras.putString(EXTRA_POSTCODE, visitItem.getPostcode());
+                extras.putString(EXTRA_GENERAL_INFORMATION, visitItem.getGeneralInformation());
+                extras.putString(EXTRA_KEYCODE, visitItem.getKeycode());
+                extras.putString(EXTRA_LEVEL_VULNERABILITY, visitItem.getLevelVulnerability());
 
                 i.putExtra(BUNDLE_EXTRAS, extras);
 
@@ -112,7 +128,8 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
         private TextView name;
         private TextView surname;
         private TextView area;
-        private TextView startTime;
+        private TextView start_time;
+
 
         private View container;
 
@@ -124,7 +141,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
             name = (TextView)itemView.findViewById(R.id.text_name);
             surname = (TextView)itemView.findViewById(R.id.text_surname);
             area = (TextView)itemView.findViewById(R.id.text_area);
-            startTime = (TextView)itemView.findViewById(R.id.text_time_start);
+            start_time = (TextView)itemView.findViewById(R.id.text_time_start);
             container =  itemView.findViewById(R.id.item_client);
 
         }

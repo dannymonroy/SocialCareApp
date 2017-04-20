@@ -29,16 +29,31 @@ public class VisitItem {
 
     private String title;
     private String name;
+    private String middle_name;
     private String surname;
     private String area;
-    private String startTime;
+    private String start_time;
+    private String end_time;
+    private String address;
+    private String postcode;
+    private String general_information;
+    private String keycode;
+    private String level_vulnerability;
 
-    public VisitItem(String title, String name, String surname, String area, String startTime) {
+
+    public VisitItem(String title, String name,String middle_name, String surname, String area, String start_time, String end_time, String address, String postcode, String general_information, String keycode, String level_vulnerability ) {
         this.title = title;
         this.name = name;
+        this.middle_name = middle_name;
         this.surname = surname;
         this.area = area;
-        this.startTime = startTime;
+        this.start_time = start_time;
+        this.end_time = end_time;
+        this.address = address;
+        this.postcode = postcode;
+        this.general_information = general_information;
+        this.keycode = keycode;
+        this.level_vulnerability =  level_vulnerability;
     }
 
     public String getTitle() {
@@ -56,6 +71,21 @@ public class VisitItem {
     }
 
     public String getStartTime() {
-        return startTime;
+        return start_time;
     }
+
+    public String getMiddleName() { return middle_name; }
+
+    public String getEndTime() { return end_time;  }
+
+    public String getAddress() { return address; }
+
+    public String getPostcode() { return postcode; }
+
+    public String getGeneralInformation() { return general_information; }
+
+    public String getKeycode() { return keycode; }
+
+    public String getLevelVulnerability() { return level_vulnerability; }
+
 }
