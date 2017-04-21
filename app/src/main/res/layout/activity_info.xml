@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Social Care Application"
+        android:text="@string/app_name"
         android:textStyle="bold"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:autoLink="web"
         android:textColorLink="@color/colorPrimaryDark"
-        android:text="https://github.com/dannymonroy"
+        android:text="@string/github"
         android:layout_marginBottom="16dp"/>
     <TextView
         android:layout_width="match_parent"

@@ -31,7 +31,7 @@
         android:textColor="@color/colorWhite"
         android:background="@color/colorPrimaryToneDown"
         android:textSize="10pt"
-        android:hint="Username"
+        android:hint="@string/username"
         android:inputType="textPersonName"
         android:textColorHint="@color/colorWhite"
         />
@@ -50,13 +50,13 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
-        android:background="#FF7259"
+        android:background="@color/colorPrimaryToneDown"
         android:padding="8dp"
         android:ems="10"
         android:fontFamily="roboto"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
-        android:hint="Password"
+        android:hint="@string/password"
         android:textSize="10pt"
         android:inputType="textPassword"/>
     <View
@@ -83,14 +83,14 @@
         android:bottomLeftRadius="10dp"
         android:topLeftRadius="10dp"
         android:topRightRadius="10dp"
-        android:text="Log in" />
+        android:text="@string/log_in" />
 
     <TextView
         android:id="@+id/text_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="For more information click here"
+        android:text="@string/information"
         android:textStyle="italic"
         android:textColor="@color/whitePlatinum"/>
 </LinearLayout>

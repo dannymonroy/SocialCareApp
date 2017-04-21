@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="Time Visit:"
+            android:text="@string/time_visit"
             android:textColor="@color/colorPrimaryDark"
             android:layout_marginRight="10px"/>
 
@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:layout_alignParentStart="true"
-            android:text=" to " />
+            android:text="@string/to" />
 
         <TextView
             android:id="@+id/text_client_end_time"
@@ -129,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="Vulnerability Level:"
+            android:text="@string/vulnerability"
             android:textColor="@color/colorPrimaryDark"
             android:layout_marginRight="8dp"
             />
@@ -151,7 +151,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="Address:"
+        android:text="@string/address"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginBottom="8dp"/>
 
@@ -177,7 +177,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="General Information: "
+        android:text="@string/general_information"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginBottom="8dp"/>
 
@@ -193,7 +193,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="Keysafe Code:"
+        android:text="@string/keysafe"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginBottom="8dp"/>
 
@@ -210,7 +210,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorWhite"
-        android:text="Look in Maps"
+        android:text="@string/maps"
         android:layout_marginBottom="16dp"/>
 
     <Button
@@ -219,7 +219,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorWhite"
-        android:text="Report"/>
+        android:text="@string/report"/>
 
 
 
