@@ -20,21 +20,18 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * LoginActivity is a simple log in activity. In future versions it will be connected to a database.
+ * LoginActivity checks for a username and password in the database. It also allows to go to the Information Activity.
  *
  * @author  Danny Monroy
  * @version 1.0
@@ -80,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                                 LoginActivity.this.startActivity(intent);
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                                builder.setMessage("Login Failed")
+                                builder.setMessage("Either your username or password are wrong")
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();

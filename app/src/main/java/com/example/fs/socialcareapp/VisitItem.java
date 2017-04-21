@@ -15,10 +15,8 @@
  */
 package com.example.fs.socialcareapp;
 
-import java.sql.Date;
-
 /**
- * VisitItem This class models the data needed for a first approach in the application.
+ * VisitItem This class models maps the data needed for the application to function.
  *
  * @author  Danny Monroy
  * @version 1.0
@@ -41,7 +39,7 @@ public class VisitItem {
     private String level_vulnerability;
 
 
-    public VisitItem(String title, String name,String middle_name, String surname, String area, String start_time, String end_time, String address, String postcode, String general_information, String keycode, String level_vulnerability ) {
+    public VisitItem(String title, String name,String middle_name, String surname, String area, String start_time, String end_time, String address, String postcode, String general_information, String keycode, String level_vulnerability) {
         this.title = title;
         this.name = name;
         this.middle_name = middle_name;

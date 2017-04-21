@@ -16,27 +16,20 @@
 
 package com.example.fs.socialcareapp;
 
-import android.app.Activity;
-import android.app.LauncherActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
 
 /**
- * ClientAdapter this is where we inflate the views and we bind the view holder.
+ * ClientAdapter is the class of binding views with the data and is an essential step for creating a RecyclerView.
  *
  * @author  Danny Monroy
  * @version 1.0
@@ -68,6 +61,14 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
         this.context = context;
     }
 
+
+    /**
+     * onCreateViewHolder is one of the mandatory methods to @Override from the RecyclerView.Adapter.
+     * In this method we inflate a view. It needs the XML of the main layout (activity_list.xml) and the list_item
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @Override
     public ClientHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(
@@ -136,7 +137,6 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
         public ClientHolder(View itemView) {
             super(itemView);
 
-            //icon = (ImageView)itemView.findViewById(R.id.ic_client);
             title = (TextView)itemView.findViewById(R.id.text_title);
             name = (TextView)itemView.findViewById(R.id.text_name);
             surname = (TextView)itemView.findViewById(R.id.text_surname);

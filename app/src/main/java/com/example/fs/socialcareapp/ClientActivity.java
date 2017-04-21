@@ -16,7 +16,6 @@
 
 package com.example.fs.socialcareapp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -24,14 +23,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import static org.json.JSONObject.NULL;
 
 /**
- * ClientActivity this activity will display the specific client with more detail.
+ * ClientActivity this activity will display the specific client with more detail. It display the bundles created in ListActivity. It also includes intents towards GoogleMaps and an Email application.
  *
  * @author  Danny Monroy
  * @version 1.0
