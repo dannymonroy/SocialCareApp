@@ -16,7 +16,7 @@
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:src="@drawable/ic_account_circle_black_36dp"
-        android:tint="@color/colorPrimaryDark" />
+        android:tint="@color/colorPrimaryDarkToneDown" />
 
     <TextView
         android:id="@+id/text_title"

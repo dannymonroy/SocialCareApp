@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.fs.socialcareapp.LoginActivity"
-    android:background="#FF7259">
+    android:background="@color/colorPrimaryToneDown">
 
 
     <ImageView
@@ -28,19 +28,19 @@
         android:layout_marginRight="18dp"
         android:ems="10"
         android:padding="8dp"
-        android:textColor="#FFFFFF"
-        android:background="#FF7259"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorPrimaryToneDown"
         android:textSize="10pt"
         android:hint="Username"
         android:inputType="textPersonName"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="@color/colorWhite"
         />
     <View
         android:layout_width="match_parent"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
         android:layout_height="2dp"
-        android:background="#FFFFFF"
+        android:background="@color/colorWhite"
         android:layout_marginBottom="18dp"/>
 
     <EditText
@@ -54,8 +54,8 @@
         android:padding="8dp"
         android:ems="10"
         android:fontFamily="roboto"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
         android:hint="Password"
         android:textSize="10pt"
         android:inputType="textPassword"/>
@@ -64,7 +64,7 @@
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
         android:layout_height="2dp"
-        android:background="#FFFFFF"
+        android:background="@color/colorWhite"
         android:layout_marginBottom="18dp"/>
 
 
@@ -75,10 +75,10 @@
         android:layout_height="40dp"
         android:textSize="10pt"
         android:fontFamily="Helvetica"
-        android:background="#38618C"
+        android:background="@color/colorPrimaryDarkToneDown"
         android:textColor="@color/whitePlatinum"
         android:layout_margin="18dp"
-        android:shadowColor="#000000"
+        android:shadowColor="@color/colorBlack"
         android:bottomRightRadius="10dp"
         android:bottomLeftRadius="10dp"
         android:topLeftRadius="10dp"
