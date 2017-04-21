@@ -11,7 +11,7 @@
         android:label="@string/empty"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity" android:screenOrientation="portrait">
             <intent-filter android:label="Social Care App">
                 <action android:name="android.intent.action.MAIN" />
 
