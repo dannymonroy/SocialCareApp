@@ -23,7 +23,7 @@ import java.util.Map;
 
 /**
  * LoginRequest deals with making a request using Volley. To do that we extend the class StringRequest from volley, create a constructor with the parameters we want and add a listener for the click.
- * Then we override the method getParams to pass to put the parameters sent in a HashMap. This class is linked with closely with LoginActivity.
+ * Then we override the method getParameters to pass to put the parameters sent in a HashMap. This class is linked with closely with LoginActivity.
  *
  * @author  Danny Monroy
  * @version 1.0
@@ -31,18 +31,18 @@ import java.util.Map;
  */
 
 public class LoginRequest extends StringRequest {
-    private static final String LOGIN_REQUEST_URL = "https://socialcareapp.000webhostapp.com/login.php";
-    private Map<String, String> params;
+    private static final String LOGIN = "https://socialcareapp.000webhostapp.com/login.php";
+    private Map<String, String> parameters;
 
     public LoginRequest(String carer_id, String password, Response.Listener<String> listener) {
-        super(Method.POST, LOGIN_REQUEST_URL, listener, null);
-        params = new HashMap<>();
-        params.put("carer_id", carer_id);
-        params.put("password", password);
+        super(Method.POST, LOGIN, listener, null);
+        parameters = new HashMap<>();
+        parameters.put("carer_id", carer_id);
+        parameters.put("password", password);
     }
 
     @Override
     public Map<String, String> getParams() {
-        return params;
+        return parameters;
     }
 }

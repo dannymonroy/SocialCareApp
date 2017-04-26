@@ -55,7 +55,9 @@ public class ListActivity extends AppCompatActivity  {
     public String returnURL (){
         Intent intent = getIntent();
         String username = intent.getStringExtra("carer_id");
+
         final String URL_DATA = "https://socialcareapp.000webhostapp.com/index1.php?id="+username;
+
         return URL_DATA;
     }
 
@@ -70,11 +72,11 @@ public class ListActivity extends AppCompatActivity  {
 
         visitItems =  new ArrayList<>();
 
-        loadRecyclerViewData();
+        loadRecViewData();
 
     }
 
-    private void loadRecyclerViewData(){
+    private void loadRecViewData(){
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading data...");
         progressDialog.show();

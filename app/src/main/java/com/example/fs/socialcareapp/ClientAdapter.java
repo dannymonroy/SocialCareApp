@@ -124,7 +124,6 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
 
     class ClientHolder extends RecyclerView.ViewHolder {
 
-        //private ImageView icon;
         private TextView title;
         private TextView name;
         private TextView surname;
