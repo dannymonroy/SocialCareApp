@@ -61,14 +61,6 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientHold
         this.context = context;
     }
 
-
-    /**
-     * onCreateViewHolder is one of the mandatory methods to @Override from the RecyclerView.Adapter.
-     * In this method we inflate a view. It needs the XML of the main layout (activity_list.xml) and the list_item
-     * @param parent
-     * @param viewType
-     * @return
-     */
     @Override
     public ClientHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(

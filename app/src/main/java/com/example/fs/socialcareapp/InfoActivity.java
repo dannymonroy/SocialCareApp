@@ -27,6 +27,14 @@ package com.example.fs.socialcareapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ * InfoActivity this activity will display simple information about the application.
+ *
+ * @author  Danny Monroy
+ * @version 1.0
+ * @since   2017-02-20
+ */
+
 public class InfoActivity extends AppCompatActivity {
 
     @Override
