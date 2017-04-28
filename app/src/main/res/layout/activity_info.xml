@@ -46,7 +46,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="4dp"
-        android:text="In order to log in in the application a manager must have provided you with a username and password."
+        android:text="You can access the web that controls the app here:"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:text="https://socialcareapp.000webhostapp.com/public/index.php"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="4dp"
+        android:text="In order to log in in the application a manager must have provided you with a username and password. For testing you can use, username: roroot200 password: root"
         android:layout_marginBottom="16dp"/>
 
 </LinearLayout>
