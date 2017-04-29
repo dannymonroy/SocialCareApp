@@ -2,7 +2,7 @@
 
 ## Abstract
 
-![Social Care Application](http://imgur.com/mLhRdmp)
+![Social Care Application](http://i.imgur.com/mLhRdmp.jpg)
 
 A number of international and national studies have demonstrated that an ageing population will bring great logistical and economical challenges for the United Kingdom and the world as a whole. As it stands right now the demand for social care services in the United Kingdom is set to increase.
 
