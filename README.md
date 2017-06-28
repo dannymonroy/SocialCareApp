@@ -2,7 +2,7 @@
 
 ## General
 
-![Social Care Application](http://imgur.com/80v8RtA)
+![Social Care Application](http://i.imgur.com/80v8RtA.jpg)
 
 This project was done to complete my final year in BSc Computing at Birkbeck. It consists of two parts:
 
@@ -23,9 +23,13 @@ To do this the system is composed of two parts an Android application and a web 
 
 The Android application allows a care worker to be able to check and update the clients she needs to visit. It will allow her to get more detailed information (provided by the manager) as well as directions and report information.
 
-To do this a login page was created for authentication. A responsive *RecyclerView* for the list and schedule and lastly, a network process using *Volley* to query the database.
+To do this a login page was created for authentication. A responsive **RecyclerView** for the list and schedule and lastly, a network process using **Volley** to query the database.
 
 Lastly, intents are used to access more client information, for example, Google maps and reporting using Gmail.
+
+---
+
+&copy; 2017 Danny Monroy
 
 
 
