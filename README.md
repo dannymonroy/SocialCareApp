@@ -1,16 +1,38 @@
 # Social Care Application
 
-## Abstract
+## General
 
-![Social Care Application](http://i.imgur.com/mLhRdmp.jpg)
+![Social Care Application](http://imgur.com/80v8RtA)
 
-A number of international and national studies have demonstrated that an ageing population will bring great logistical and economical challenges for the United Kingdom and the world as a whole. As it stands right now the demand for social care services in the United Kingdom is set to increase.
+This project was done to complete my final year in BSc Computing at Birkbeck. It consists of two parts:
 
-The Social Care Application intends to bridge the technological gap between care workers, the people responsible for delivering care, and care managers, the people responsible for making decisions in the best interests of the client.
+* Android Application
+* Web Application
 
-This report highlights the most common issues in the daily work cycle of a care worker to streamline required reporting. To achieve this, both primary and secondary research was gathered in order to build the requirements of the application so that it meets the demands of care workers and care manager alike.
+This repository is the code for the Android Application. To look at the web application please click [here](https://github.com/dannymonroy/SocialCarePanel).
 
-To this objective, I have built a system that compromises an Android application that fetches information using a script as an intermediary to the database. In turn, the database is updated using a website management system so that care managers can keep track and update the information as is needed.
+## Motivation
+
+After working some years in the social care industry in the United Kingdom I got to see first hand the inefficient use of resources to solve that I started programming this application in the Spring of 2017.
+
+The motivation was to help with the communication deficiencies in the industry.
+
+To do this the system is composed of two parts an Android application and a web application.
+
+## Android Part
+
+The Android application allows a care worker to be able to check and update the clients she needs to visit. It will allow her to get more detailed information (provided by the manager) as well as directions and report information.
+
+To do this a login page was created for authentication. A responsive *RecyclerView* for the list and schedule and lastly, a network process using *Volley* to query the database.
+
+Lastly, intents are used to access more client information, for example, Google maps and reporting using Gmail.
+
+
+
+
+
+
+
 
 
 
