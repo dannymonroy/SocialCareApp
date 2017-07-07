@@ -29,9 +29,9 @@ Lastly, intents are used to access more client information, for example, Google 
 
 ## Screenshots
 
-![Screenshot1](http://i.imgur.com/RqXrEyR)
-![Screenshot2](http://i.imgur.com/m19YlAV)
-![Screenshot3](http://i.imgur.com/3qtvUfR)
+![Screenshot1](http://i.imgur.com/RqXrEyR.jpg)
+![Screenshot2](http://i.imgur.com/m19YlAV.jpg)
+![Screenshot3](http://i.imgur.com/3qtvUfR.jpg)
 
 
 ---
