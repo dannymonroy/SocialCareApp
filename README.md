@@ -28,10 +28,9 @@ To do this a login page was created for authentication. A responsive **RecyclerV
 Lastly, intents are used to access more client information, for example, Google maps and reporting using Gmail.
 
 ## Screenshots
-
-![Screenshot1](http://i.imgur.com/RqXrEyR.jpg)
-![Screenshot2](http://i.imgur.com/m19YlAV.jpg)
-![Screenshot3](http://i.imgur.com/3qtvUfR.jpg)
+![Screenshot1](http://i.imgur.com/50Shj7H.png)
+![Screenshot2](http://i.imgur.com/6nl7V5G.png)
+![Screenshot3](http://i.imgur.com/1P37j4x.png)
 
 
 ---
